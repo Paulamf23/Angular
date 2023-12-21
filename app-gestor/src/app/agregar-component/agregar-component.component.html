@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="col">
+    <h1 style="color: rgb(55, 55, 235);; text-align: center;">{{titulo}}</h1>
+  </div>
+
+  <form class="form-group row">
+    <div style="text-align: center;">
+      <label for="tarea">Tarea:</label>
+      <input style="max-width: 20%; margin-left: 40%;" type="text" name="tarea" id="tarea" placeholder="Tarea"
+        class="form-control" [(ngModel)]="cuadroTarea">
+    </div>
+    <div style="text-align: center; margin-top: 0.5%;">
+      <label for="fecha">Fecha Maxima:</label>
+      <input style="max-width: 20%; margin-left: 40%;" type="text" name="fecha" pattern="\d{2}/\d{2}/\d{4}" id="fecha" placeholder="dd/mm/aaaa"
+        class="form-control" [(ngModel)]="cuadroFechaMaxima">
+    </div>
+    <div style="text-align: center; margin-top: 2%;">
+      <button type="submit" style="background-color: rgb(55, 55, 235);" class="btn btn-primary" (click)="agregarTarea()">Agrega una tarea</button>
+    </div>
+  </form>
+</div>

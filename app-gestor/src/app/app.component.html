@@ -1,0 +1,20 @@
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <div class="col-md-3 mb-2 mb-md-0">
+      <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+        <h2 style="color: rgb(55, 55, 235);">Gestor de Tareas</h2>
+      </a>
+    </div>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/listado" class="nav-link px-2">Listado</a></li>
+      <li><a href="/agregar" class="nav-link px-2">Agrega Tarea</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <button type="button" class="btn btn-outline-primary me-2" routerLink="/login" *ngIf="!estaLogueado()">Iniciar Sesión</button>
+      <button type="button" style="background-color:rgb(55, 55, 235);" class="btn btn-primary" (click)="noLogueado()" *ngIf="estaLogueado()">Cerrar Sesión</button>
+    </div>
+  </header>
+</div>
+<router-outlet></router-outlet>

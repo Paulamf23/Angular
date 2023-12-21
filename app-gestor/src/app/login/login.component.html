@@ -1,0 +1,42 @@
+<div style="text-align: center; margin-top: 10%;">
+    <ng-container *ngIf="!registrandose; else registroTemplate">
+      <!-- Formulario de inicio de sesión -->
+      <form #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
+        <h2 style="font-weight: bold; color: blue;">Iniciar Sesion</h2>
+        <br>
+        <div>
+            <input class="form-control" style="max-width: 20%; margin-left: 40%;" type="email" name="email" placeholder="email" ngModel>
+        </div>
+        <br>
+        <div>
+            <input class="form-control" style="max-width: 20%;  margin-left: 40%;" type="password" name="password" placeholder="password" ngModel>
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+      <p>¿No estás registrado? <a style="color: blue; text-decoration: underline;" (click)="toggleRegistro()">Regístrate</a></p>
+    </ng-container>
+  
+    <ng-template #registroTemplate>
+      <!-- Formulario de registro -->
+      <form #miFormulario="ngForm" (ngSubmit)="registrar(miFormulario)">
+        <h2 style="font-weight: bold; color: blue;">Registrar</h2>
+        <div>
+          <input class="form-control" style="max-width: 20%; margin-left: 40%;" type="email" name="email" placeholder="email" ngModel>
+        </div>
+        <br>
+        <div>
+          <input class="form-control" style="max-width: 20%;  margin-left: 40%;" type="password" name="password" placeholder="password" minlength="6" ngModel>
+        </div>
+        <br>
+        <div>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </div>
+        <br>
+        <p>¿Ya tienes cuenta? <a style="color: blue; text-decoration: underline;" (click)="toggleRegistro()">Inicia sesión</a></p>
+      </form>
+    </ng-template>
+  </div>
+  
